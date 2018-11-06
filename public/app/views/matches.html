@@ -1,0 +1,40 @@
+<div class="panel panel-success">
+    <div class=panel-heading></div>
+    <form class="form-inline">
+        <div class="form-group">
+            <label>Search by Team , Match id or Tournament</label>
+            <br>
+            <input type="text" ng-model="search" class="form-control" placeholder="Keyword">
+        </div>
+    </form>
+    <br>
+    <table class=table>
+        <thead>
+            <tr>
+                <th>match ID</th>
+                <th>Duration</th>
+                <th>Start time</th>
+                <th>Radiant Team</th>
+                <th>Dire Team</th>
+                <th>Score</th>
+                <th>Result</th>
+                <th>League Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="data in match_data.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage)) | filter:search">
+                <td>{{ data.match_id }}</td>
+                <td>{{ formatDuration(data.duration) }}</td>
+                <td>{{ formatTime(data.start_time) }}</td>
+                <td>{{ data.radiant_name }}</td>
+                <td>{{ data.dire_name }}</td>
+                <td>{{ formatScore(data.radiant_score,data.dire_score) }}</td>
+                <td class="radiant_green" ng-class="{'dire_red': (formatWin(data.radiant_win) == 'Dire Victory')}">{{ formatWin(data.radiant_win) }}</td>
+                <td>{{ data.league_name }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" class="pagination-sm" items-per-page="itemsPerPage"></div>
+
+</div>
