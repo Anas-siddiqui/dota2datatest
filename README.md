@@ -22,4 +22,4 @@
 <br>
 10- mainCtrl is the controller responsible for handling data with all the helper functions used for dota 2 data formatting
 <br>
-P.S : Every file has indiviudal comments inside for more help.
+P.S : Every file has indiviudal comments inside for more help. I could have also added filterring with ng-click.
