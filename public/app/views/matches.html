@@ -12,17 +12,26 @@
         <thead>
             <tr>
                 <th>match ID</th>
-                <th>Duration</th>
-                <th>Start time</th>
+                <th ng-click="sort('duration')">Duration
+                <span class="glyphicon sort-icon" ng-show="sortKey=='duration'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                </th>
+                <th ng-click="sort('start_time')">Start time
+                    <span class="glyphicon sort-icon" ng-show="sortKey=='start_time'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                
+                </th>
                 <th>Radiant Team</th>
                 <th>Dire Team</th>
                 <th>Score</th>
-                <th>Result</th>
+                <th ng-click="sort('radiant_win')">Result
+                    
+                      <span class="glyphicon sort-icon" ng-show="sortKey=='radiant_win'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                
+                </th>
                 <th>League Name</th>
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="data in match_data.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage)) | filter:search">
+            <tr ng-repeat="data in match_data.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage)) | filter:search |orderBy:sortKey:reverse">
                 <td>{{ data.match_id }}</td>
                 <td>{{ formatDuration(data.duration) }}</td>
                 <td>{{ formatTime(data.start_time) }}</td>
