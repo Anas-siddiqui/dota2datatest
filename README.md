@@ -1,6 +1,6 @@
 # dota2datatest
 
-<h2> Following are the main highlights for the code  </h2>
+<h2> Following are the main highlights about the code  </h2>
 <br>
 1- Using Nodejs Express framework with Angular < 2 Frontend
 <br>
@@ -14,7 +14,7 @@
 <br>
 6- views folder contains all the html files for rendering
 <br>
-7- Dota 2 match table div is inside a separated file for cleaner code (matches.html)
+7- Dota 2 match table div is inside a separated file for cleaner code (matches.html). Table has searching and sorting (click on cloumn heading) features.
 <br>
 8- Main homepage (index.html) is using Bootstrap for structuring, there is a navbar and table inside it.
 <br>
@@ -22,4 +22,5 @@
 <br>
 10- mainCtrl is the controller responsible for handling data with all the helper functions used for dota 2 data formatting
 <br>
-P.S : Every file has indiviudal comments inside for more help. Searching and sorting is already working.
+<br>
+P.S : Every file has indiviudal comments inside for more help.
